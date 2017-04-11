@@ -32,6 +32,15 @@ public class HelloWorldSparkStyle
             return "A sad nešto sasvim drugačije!";
           }
         });
+    Spark.get ("/echo/:wc",new Route()
+            {
+              @Override
+              public Object handle(final Request request, final Response response)
+              {
+                return request.params(":wc");
+              }
+            });
+
 
   }
 }
